@@ -1,121 +1,83 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div>
+      <nav className="navbar">
+        <h1>🍵 BABAI CHAI</h1>
+
+        <div className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
+      </nav>
+
+      <section id="home" className="hero-section">
         <div>
-          <h1>Get started</h1>
+          <h1>Welcome to BABAI CHAI ☕</h1>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            Enjoy delicious chai, snacks and a relaxing atmosphere
+            with your friends.
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+          <button>View Menu</button>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <section id="about" className="about-section">
+        <h2>About BABAI CHAI</h2>
+
+        <p>
+          BABAI CHAI is a cozy place to enjoy hot chai and tasty snacks.
+          Perfect for spending time with friends and family.
+        </p>
+
+        <div className="shop-info">
+          <p>⭐ 4.4 Rating</p>
+          <p>📍 DLF Gachibowli</p>
+          <p>🕐 Open until 1 AM</p>
+        </div>
+      </section>
+
+      <section id="menu" className="menu-section">
+        <h2>Our Menu</h2>
+
+        <div className="food-container">
+          <div className="food-card">
+            <h3>☕ Irani Chai</h3>
+            <p>Traditional hot chai</p>
+            <strong>₹30</strong>
+            <button>Add to Cart</button>
+          </div>
+
+          <div className="food-card">
+            <h3>🥤 Special Chai</h3>
+            <p>Our special refreshing chai</p>
+            <strong>₹40</strong>
+            <button>Add to Cart</button>
+          </div>
+
+          <div className="food-card">
+            <h3>🍪 Biscuits</h3>
+            <p>Perfect combination with chai</p>
+            <strong>₹20</strong>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="contact-section">
+        <h2>Visit Us</h2>
+        <p>📍 FOOD COURT, behind UTS Food Court DLF, Gachibowli</p>
+        <p>🍵 Come and enjoy your chai!</p>
+      </section>
+
+      <footer>
+        <p>© 2026 BABAI CHAI. All Rights Reserved.</p>
+      </footer>
+    </div>
   )
 }
 
