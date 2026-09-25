@@ -4,17 +4,13 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
   font-family: Arial, sans-serif;
   background-color: #fff8f0;
   color: #3e2723;
+  line-height: 1.5;
 }
-
-/* Navbar */
 
 .navbar {
   background-color: #4e260e;
@@ -23,183 +19,58 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+.brand { color: white; text-decoration: none; font-size: 25px; font-weight: bold; }
+.nav-links { display: flex; align-items: center; gap: 25px; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+.nav-links a:hover, .nav-links a:focus-visible { color: #ffd180; }
+.cart-link { display: flex; align-items: center; gap: 6px; }
+.cart-count { background: #ffd180; color: #4e260e; border-radius: 999px; min-width: 22px; padding: 1px 6px; text-align: center; font-size: 13px; }
 
-.navbar h1 {
-  font-size: 25px;
-}
+.hero-section { min-height: 500px; display: flex; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; background: #f3d2a2; }
+.hero-content { max-width: 720px; }
+.eyebrow { color: #8b4a20; font-size: 14px; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+.hero-section h1 { font-size: 48px; margin-bottom: 20px; line-height: 1.15; }
+.hero-section p:not(.eyebrow) { font-size: 20px; max-width: 600px; line-height: 1.6; margin: 0 auto 30px; }
+button { background-color: #6d3515; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; }
+button:hover, button:focus-visible { background-color: #4e260e; }
+:focus-visible { outline: 3px solid #d97706; outline-offset: 3px; }
 
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
+.about-section, .contact-section { padding: 70px 20px; text-align: center; }
+.about-section h2, .menu-section h2, .contact-section h2 { font-size: 35px; margin-bottom: 20px; }
+.about-section > p:not(.eyebrow) { max-width: 700px; margin: auto; line-height: 1.7; font-size: 18px; }
+.shop-info { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+.shop-info p { background: white; padding: 15px 25px; border-radius: 10px; box-shadow: 0 3px 10px #ddd; }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+.menu-section { padding: 70px 20px; background-color: #f9ead8; text-align: center; }
+.food-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 40px; }
+.food-card { background-color: white; width: 280px; overflow: hidden; border-radius: 15px; box-shadow: 0 4px 12px #ddd; }
+.food-card img { display: block; width: 100%; height: 180px; object-fit: cover; }
+.food-card-content { padding: 25px; }
+.food-card h3 { font-size: 22px; margin-bottom: 15px; }
+.food-card p { margin-bottom: 15px; color: #666; }
+.food-card strong { display: block; font-size: 20px; margin-bottom: 20px; }
 
-.nav-links a:hover {
-  color: #ffd180;
-}
-
-/* Hero */
-
-.hero-section {
-  min-height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-  background: #f3d2a2;
-}
-
-.hero-section h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero-section p {
-  font-size: 20px;
-  max-width: 600px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-button {
-  background-color: #6d3515;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #4e260e;
-}
-
-/* About */
-
-.about-section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-.about-section h2,
-.menu-section h2,
-.contact-section h2 {
-  font-size: 35px;
-  margin-bottom: 20px;
-}
-
-.about-section > p {
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.7;
-  font-size: 18px;
-}
-
-.shop-info {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.shop-info p {
-  background: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px #ddd;
-}
-
-/* Menu */
-
-.menu-section {
-  padding: 70px 20px;
-  background-color: #f9ead8;
-  text-align: center;
-}
-
-.food-container {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.food-card {
-  background-color: white;
-  width: 280px;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px #ddd;
-}
-
-.food-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.food-card p {
-  margin-bottom: 15px;
-  color: #666;
-}
-
-.food-card strong {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-/* Contact */
-
-.contact-section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-.contact-section p {
-  margin: 12px;
-  font-size: 18px;
-}
-
-/* Footer */
-
-footer {
-  background-color: #4e260e;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Mobile */
+.cart-panel { max-width: 880px; margin: 50px auto 0; padding: 24px; background: #fff; border: 1px solid #ead6c0; border-radius: 15px; text-align: left; }
+.cart-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.cart-header h3 { font-size: 24px; }
+.text-button, .remove-button { background: transparent; color: #6d3515; padding: 5px 8px; font-size: 14px; text-decoration: underline; }
+.text-button:hover, .text-button:focus-visible, .remove-button:hover, .remove-button:focus-visible { background: #fff1df; color: #4e260e; }
+.empty-cart { margin-top: 15px; color: #666; }
+.cart-items { list-style: none; margin-top: 15px; }
+.cart-items li { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 10px 0; border-bottom: 1px solid #f0e0cf; }
+.cart-total { margin-top: 18px; text-align: right; font-size: 18px; }
+.contact-section p { margin: 12px; font-size: 18px; }
+footer { background-color: #4e260e; color: white; text-align: center; padding: 20px; }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .hero-section h1 {
-    font-size: 35px;
-  }
-
-  .hero-section p {
-    font-size: 17px;
-  }
+  .navbar { flex-direction: column; padding: 20px; }
+  .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .hero-section h1 { font-size: 35px; }
+  .hero-section p:not(.eyebrow) { font-size: 17px; }
+  .cart-items li { align-items: flex-start; }
 }

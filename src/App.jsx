@@ -1,83 +1,48 @@
 import './index.css'
+import { useState } from 'react'
+import About from './components/About.jsx'
+import Footer from './components/Footer.jsx'
+import Hero from './components/Hero.jsx'
+import Menu from './components/Menu.jsx'
+import Navbar from './components/Navbar.jsx'
 
 function App() {
+  const [cart, setCart] = useState([])
+
+  const addToCart = (item) => {
+    setCart((currentCart) => [...currentCart, item])
+  }
+
+  const removeFromCart = (indexToRemove) => {
+    setCart((currentCart) => currentCart.filter((_, index) => index !== indexToRemove))
+  }
+
+  const clearCart = () => setCart([])
+
+  const scrollToMenu = () => {
+    document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <div>
-      <nav className="navbar">
-        <h1>🍵 BABAI CHAI</h1>
-
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#menu">Menu</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-
-      <section id="home" className="hero-section">
-        <div>
-          <h1>Welcome to BABAI CHAI ☕</h1>
-          <p>
-            Enjoy delicious chai, snacks and a relaxing atmosphere
-            with your friends.
-          </p>
-
-          <button>View Menu</button>
-        </div>
-      </section>
-
-      <section id="about" className="about-section">
-        <h2>About BABAI CHAI</h2>
-
-        <p>
-          BABAI CHAI is a cozy place to enjoy hot chai and tasty snacks.
-          Perfect for spending time with friends and family.
-        </p>
-
-        <div className="shop-info">
-          <p>⭐ 4.4 Rating</p>
-          <p>📍 DLF Gachibowli</p>
-          <p>🕐 Open until 1 AM</p>
-        </div>
-      </section>
-
-      <section id="menu" className="menu-section">
-        <h2>Our Menu</h2>
-
-        <div className="food-container">
-          <div className="food-card">
-            <h3>☕ Irani Chai</h3>
-            <p>Traditional hot chai</p>
-            <strong>₹30</strong>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="food-card">
-            <h3>🥤 Special Chai</h3>
-            <p>Our special refreshing chai</p>
-            <strong>₹40</strong>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="food-card">
-            <h3>🍪 Biscuits</h3>
-            <p>Perfect combination with chai</p>
-            <strong>₹20</strong>
-            <button>Add to Cart</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="contact-section">
-        <h2>Visit Us</h2>
-        <p>📍 FOOD COURT, behind UTS Food Court DLF, Gachibowli</p>
-        <p>🍵 Come and enjoy your chai!</p>
-      </section>
-
-      <footer>
-        <p>© 2026 BABAI CHAI. All Rights Reserved.</p>
-      </footer>
-    </div>
+    <>
+      <Navbar cartCount={cart.length} />
+      <main>
+        <Hero onViewMenu={scrollToMenu} />
+        <About />
+        <Menu
+          cart={cart}
+          onAddToCart={addToCart}
+          onRemoveFromCart={removeFromCart}
+          onClearCart={clearCart}
+        />
+        <section id="contact" className="contact-section" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Visit Us</h2>
+          <p>📍 FOOD COURT, behind UTS Food Court DLF, Gachibowli</p>
+          <p>🍵 Come and enjoy your chai!</p>
+        </section>
+      </main>
+      <Footer />
+    </>
   )
 }
 
